@@ -1,0 +1,87 @@
+print('''        welcome to virtual dice rolling game        ''')
+choice = int(input('how many sided dice you want to roll . enter 3/4/5/6'))
+if choice == 3:
+    min=1
+    max=3
+if choice == 4:
+    min=1
+    max=4
+if choice == 5:
+    min=1
+    max=5
+if choice == 6:
+    min=1
+    max=6
+from random import randint
+start=input('player 1 its your turn ......enter yes if u r ready')
+while start !='q'and 'q'.upper():
+    def result(x):
+        if x == 1:
+            return('''
+                       ||||||||||||
+                       |          |
+                       |          |
+                       |    O     |
+                       |          |
+                       |          |
+                       ||||||||||||  ''')
+        if x == 2:
+            return('''
+                        |||||||||||
+                        |         |
+                        |         |
+                        |   O O   |
+                        |         |
+                        |         |
+                        |||||||||||  ''')
+        if x == 3:
+            return('''
+                        |||||||||||
+                        |         |
+                        |         |
+                        |  O   O  |
+                        |         |
+                        |    O    |
+                        |         |
+                        |||||||||||  ''')
+        if x == 4:
+            return('''
+                        |||||||||||
+                        |         |
+                        |   O O   |
+                        |   O O   |
+                        |         |
+                        |||||||||||  ''')
+        if x == 5:
+            return('''
+                        |||||||||||
+                        |         |
+                        |  O   O  |
+                        |    O    |
+                        |  O   O  |
+                        |         |
+                        ||||||||||| ''')
+        if x == 6:
+            return('''
+                        |||||||||||
+                        |         |
+                        |   O  O  |
+                        |   O  O  |
+                        |   O  O  |
+                        |         |
+                        ||||||||||| ''')
+    a=randint(min,max)
+    print('player 1 rolled', result(a))
+    b=randint(min,max)
+    print('computer rolled',result(b))
+    if a>b:
+        print('player 1 won')
+    elif a==b:
+        print('it s a draw')
+    else:
+        print('computer won')
+    start = input(' enter yes to continue or q to quit')
+if start=='q':
+    print("game over")
+    
+
